@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * Libreria para sacar por dispositivos un mensaje y
  * pedir por consola distintos tipos de datos
- * @version 0.2
+ * @version 0.3
  * @author Damian Nogueiras
  * @author Aitor Couñago Figueroa
  */
@@ -60,10 +60,9 @@ public class EntradaSalida {
     }
 
     /**
-     * Método para obtener distintos tipos de datos por consola
+     * Método para obtener una cadena por consola
      * @param comentario mensaje para pedir la introducción de una entrada por consola
-     * @param tipo dato que se va a pedir<br>String: CADENA<br>int: NUMERO
-     * @return true si es correcto, si no false.
+     * @return el string introducido o null en caso de error
      */
     public static String entrada(String comentario){
         try {
@@ -77,6 +76,11 @@ public class EntradaSalida {
         }
     }
 
+    /**
+     * Método para obtener un número por consola
+     * @param comentario mensaje para pedir la introducción de una entrada por consola
+     * @return el número introducido o null en caso de error
+     */
     public static Integer numero(String comentario) {
         try {
             System.out.println(comentario);
