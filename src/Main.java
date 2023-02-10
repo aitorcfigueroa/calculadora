@@ -11,13 +11,17 @@ public class Main {
 
         // Se pide el operador hasta que sea un operador válido.
         boolean operandoIsOk = false;
-        String getOperando = "+";
+        Integer getOperando = 1;
         while (!operandoIsOk) {
-            getOperando = EntradaSalida.entrada("Introduce el operador:");
-            operandoIsOk = Calculadora.comprobacion(getOperando);
+            getOperando = EntradaSalida.numero("Introduce el operador: \n1 - Suma\n2 - Resta\n3 - Multiplicación\n4 - División\n5 - Raíz");
+            try {
+                operandoIsOk = Calculadora.comprobacion(getOperando);
+            } catch (NullPointerException ex) {
+
+            }
 
             if (!operandoIsOk) {
-                System.out.println("Error en el operador introducido, por favor introduzca: '+' '-' '*' '/'");
+                System.out.println("Error en el operador introducido, por favor introduzca un valor válido para el operador.");
             }
         }
 
